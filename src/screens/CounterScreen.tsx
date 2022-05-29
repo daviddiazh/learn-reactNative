@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import Fab from '../components/Fab';
 
 const CounterScreen = () => {
 
@@ -8,12 +9,15 @@ const CounterScreen = () => {
   return (
     <View style={ styles.container }>
         <Text style={ styles.titleScreen }>Contador: {counter}</Text>
-        <TouchableOpacity
+        <Fab 
+            title='-1'
+            position='bl'
             onPress={ () => setCounter(counter + 1) }
-            style={ styles.buttons }
-        >
-            <Text>+1</Text>
-        </TouchableOpacity>
+        />  
+        <Fab 
+            title='+1'
+            onPress={ () => setCounter(counter + 1) }
+        />    
     </View>
   )
 }
@@ -25,14 +29,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fafafa',
     },
     titleScreen: {
-        fontSize: 25,
+        fontSize: 40,
         textAlign: 'center',
         top: -15,
+        color: 'black'
     },
-    buttons: {
-        backgroundColor: '#2196f3',
-        borderRadius: 100,
-    }
 });
 
 export default CounterScreen
