@@ -12,7 +12,7 @@ const CounterScreen = () => {
         <Fab 
             title='-1'
             position='bl'
-            onPress={ () => setCounter(counter + 1) }
+            onPress={ () => setCounter(counter - 1) }
         />  
         <Fab 
             title='+1'

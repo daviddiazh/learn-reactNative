@@ -12,11 +12,13 @@ const Fab = ({title, onPress, position = 'br'}: Props) => {
     const ios = () => {
         return (
             <TouchableOpacity 
-            activeOpacity={ 0.75 }
-            style={[
-                styles.fabLocation, 
-                (position === 'bl' ? styles.left : styles.right)
-            ]}>
+                activeOpacity={ 0.75 }
+                style={[
+                    styles.fabLocation, 
+                    (position === 'bl' ? styles.left : styles.right)
+                ]}
+                onPress={ onPress }
+            >
                 <View style={ styles.fab }>
                     <Text style={ styles.fabText }>{title}</Text>
                 </View>
